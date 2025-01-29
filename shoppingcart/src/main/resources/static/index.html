@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Home Page -->
+    <div id="home-page" class="page">
+        <header>
+            <h1>Shopping Cart</h1>
+            <p>Your favorite items, just a click away!</p>
+            <nav>
+                <a href="#view-cart">View Cart</a>
+                <a href="#add-item">Add Item</a>
+            </nav>
+        </header>
+        <main>
+            <h2>Welcome to the Shopping Cart App</h2>
+            <p>Use this app to manage your shopping items and calculate your total cost.</p>
+            <button onclick="location.href='#view-cart'">Go to Cart</button>
+        </main>
+    </div>
+
+    <!-- View Cart Page -->
+    <div id="view-cart" class="page hidden">
+        <header>
+            <h1>Your Shopping Cart</h1>
+            <nav>
+                <a href="#home-page">Home</a>
+                <a href="#add-item">Add Item</a>
+            </nav>
+        </header>
+        <main>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Price per Unit</th>
+                        <th>Total Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Cart items will be dynamically loaded here -->
+                </tbody>
+            </table>
+            <div class="cart-total">
+                <h3>Total Cost: <span id="total-cost">$0.00</span></h3>
+                <button onclick="clearCart()">Clear Cart</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Item Page -->
+    <div id="add-item" class="page hidden">
+        <header>
+            <h1>Add a New Item to Your Cart</h1>
+            <nav>
+                <a href="#home-page">Home</a>
+                <a href="#view-cart">View Cart</a>
+            </nav>
+        </header>
+        <main>
+            <form id="add-item-form" onsubmit="addItem(event)">
+                <label for="item-name">Item Name:</label>
+                <input type="text" id="item-name" name="name" required>
+
+                <label for="item-price">Price:</label>
+                <input type="number" id="item-price" name="price" step="0.01" required>
+
+                <label for="item-quantity">Quantity:</label>
+                <input type="number" id="item-quantity" name="quantity" required>
+
+                <button type="submit">Add Item</button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Update Item Page -->
+    <div id="update-item" class="page hidden">
+        <header>
+            <h1>Update Item in Your Cart</h1>
+            <nav>
+                <a href="#home-page">Home</a>
+                <a href="#view-cart">View Cart</a>
+            </nav>
+        </header>
+        <main>
+            <form id="update-item-form" onsubmit="updateItem(event)">
+                <label for="select-item">Select Item:</label>
+                <select id="select-item" name="item" required>
+                    <!-- Options will be dynamically populated -->
+                </select>
+
+                <label for="new-quantity">New Quantity:</label>
+                <input type="number" id="new-quantity" name="quantity" required>
+
+                <button type="submit">Update Item</button>
+            </form>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

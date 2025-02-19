@@ -1,7 +1,3 @@
-Shamsaine: generate content for this readme file it should contain a brief description of the project and how to set it up
-
-Workspace: Collecting workspace information
-
 # Shopping Cart API with Spring Boot
 
 A simple Shopping Cart API implementation with four endpoints using Spring Boot.

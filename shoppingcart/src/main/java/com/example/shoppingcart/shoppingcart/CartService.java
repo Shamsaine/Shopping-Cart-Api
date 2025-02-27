@@ -9,7 +9,7 @@ public class CartService {
     public List<CartModel> cartList = new ArrayList<CartModel>();
 
     //return all items in the cart
-    public List<CartModel> getcartList() {
+    public List<CartModel> getCartList() {
         return cartList;
     }
 
@@ -35,10 +35,9 @@ public class CartService {
         }
 
     }
-
     //delete item from cart
     public void deleteCartItem(int id){
-        cartList.removeif(item -> item.getId() == id);
+        cartList.removeIf(item -> item.getId() == id);
     }
 
 /*        if (item.getId() == cart.getId){
